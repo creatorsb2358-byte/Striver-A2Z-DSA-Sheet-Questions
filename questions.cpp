@@ -1,20 +1,20 @@
-// decimal to binary:
+// binary to decimal:
 
 #include <iostream>
 using namespace std;
 
 int main(){
-    int decimal ;
-    cout << "choose decimal for conversion:";
-    cin >> decimal;
+    int binary ;
+    cout << "choose binary for conversion:";
+    cin >> binary;
     int power = 1;
-    int binary = 0;
-    while (decimal > 0){
-        int remainder = decimal % 2;
-        decimal /= 2;
-        binary += remainder*power ;
-        power *= 10;
+    int decimal = 0;
+    while (binary > 0){
+        int remainder = binary % 10;
+        binary /= 10;
+        decimal += remainder*power ;
+        power *= 2;
 
     }
-    cout << binary ; 
+    cout << decimal ; 
 }
