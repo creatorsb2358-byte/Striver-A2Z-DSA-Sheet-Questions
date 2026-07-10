@@ -1,33 +1,18 @@
-/// to find the smallest number in an array;
+///to find the index of the smallest number 
 
 #include <iostream>
 using namespace std;
 
 int main(){
-    int marks[5] = {1,2,3,4,5};
-    int small = INT32_MAX;
+    int num[5] = {2,1,3,4,5};
+    int smallest = INT32_MAX ;
+    int variable = 0;
     for(int i = 0; i < 5; i++){
-        if(marks[i] < small ){
-            small = marks[i];
-        }
-        
-    }
-    cout << small << endl;
-    return 0 ;
-
-}
-
-
-/// to find the largest number in an array;
-
-int main1(){
-    int marks[5] = {1,2,3,4,5};
-    int largest = INT32_MIN;
-    for(int i = 0; i < 5; i++){
-        if(marks[i] > largest){
-            largest = marks[i];
+        smallest = min(num[i],smallest);
+        if(smallest == num[i]){
+            variable = i;
+            
         }
     }
-    cout << largest << endl;
-    return 0;
+    cout << variable ;
 }
