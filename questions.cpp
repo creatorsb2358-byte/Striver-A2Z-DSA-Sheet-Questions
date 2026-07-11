@@ -1,15 +1,20 @@
-/// to find a number index in array
+/// how to reverse an array with 2 pointer approach
 
 #include <iostream>
 using namespace std;
 
 int main(){
-    int arr[5] = {7,4,2,8,3};
-    int num = 8;
-    for(int i = 0; i < 5; i++){
-        if(arr[i] == num){
-            cout << i ;
-        }
+    int arr[5] = {0,1,2,3,4};
+    int size = 5;
+    int start = 0;
+    int end = size - 1;
+    while (start <= end){
+        swap(arr[start], arr[end]);
+        start++;
+        end-- ;
     }
-    return 0 ;
+    for(int i = 0; i < size ; i++){
+        cout << arr[i] << " ";
+    }
+    return 0;
 }
