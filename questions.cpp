@@ -1,20 +1,21 @@
-/// how to reverse an array with 2 pointer approach
+///make a function to sum and product all the numbers in array .
 
 #include <iostream>
 using namespace std;
 
-int main(){
-    int arr[5] = {0,1,2,3,4};
-    int size = 5;
-    int start = 0;
-    int end = size - 1;
-    while (start <= end){
-        swap(arr[start], arr[end]);
-        start++;
-        end-- ;
-    }
+void sum_product(const int arr[], int size){
+    int sum = 0;
+    int product = 1;
     for(int i = 0; i < size ; i++){
-        cout << arr[i] << " ";
+        sum += arr[i];
+        product *= arr[i];
     }
-    return 0;
+    cout << sum << endl;
+    cout << product;
+}
+
+int main(){
+    int array[] = {1,2,3,4,5};
+    int size = 5;
+    sum_product(array , size);
 }
