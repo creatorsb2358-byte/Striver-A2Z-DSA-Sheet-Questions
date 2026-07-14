@@ -1,17 +1,19 @@
-///to print the subarray:
+///to print the max subarray(using bruteforce):
 
 #include <iostream>
 using namespace std;
 
 int main(){
-    int arr[5] = {1,2,3,4,5};
-    for(int st = 0; st < 5; st++){
-        for(int end = st; end < 5 ; end++){
-            for(int i = st; i <= end; i++){
-                cout << arr[i] ;
-            }
-            cout << " " ;
+    int arr[7] = {3,-4,5,4,-1,7,-8};
+    int maxx = INT16_MIN;
+    for(int st = 0; st < 7; st++){
+        int sum = 0;
+        for(int end = st; end < 7; end++){
+            sum += arr[end];
+            maxx = max(sum,maxx);
         }
-        cout << endl;
     }
+    cout << "so the max subarray is :" << maxx ;
+
 }
+
