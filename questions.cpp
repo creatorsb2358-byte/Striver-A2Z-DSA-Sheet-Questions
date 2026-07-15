@@ -1,29 +1,23 @@
-///pairsum:
+///palindrome number
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector<int> pairsum(vector<int>& nums, int target){
-    int i = 0 , j = 3;
-    while(i <  j ){
-        int pairsum = nums[i] + nums[j];
-        if(pairsum > target){
-            j--;
-        }else if (pairsum < target){
-            i++;
-        }else {
-            nums.push_back(i);
-            nums.push_back(j);
-            return nums;
+int main(){
+    int x = 121;
+        long long reverse = 0;
+        int num = x;
+        while (x > 0){
+            int digit = x % 10;
+            x/=10;
+            reverse = reverse * 10 + digit;
+
+        }
+        if(reverse == num){
+            cout << true;
+        }else if(num < 0){
+            cout << false;
+        }else{
+            cout << false;
         }
     }
-}
-
-int main(){
-    vector<int> nums  = {2,7,11,15};
-    int target = 9;
-    vector<int> ans = pairsum(nums , target );
-    cout << ans[0] << " " << ans[1] ;
-}
-
