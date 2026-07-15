@@ -1,23 +1,23 @@
-///palindrome number
+///remove duplicates in a sorted array:
 
 #include <iostream>
 using namespace std;
 
 int main(){
-    int x = 121;
-        long long reverse = 0;
-        int num = x;
-        while (x > 0){
-            int digit = x % 10;
-            x/=10;
-            reverse = reverse * 10 + digit;
-
-        }
-        if(reverse == num){
-            cout << true;
-        }else if(num < 0){
-            cout << false;
+    int nums[5] = {1,2,3,3,4};
+    int size = 5;
+    int st = 0 , end = 1;
+    while(end < size){
+        if(nums[st] == nums[end]){
+            end++;
         }else{
-            cout << false;
+            st++;
+
+            nums[st] = nums[end];
+            end++;
+              
         }
     }
+    cout << st + 1;
+    }
+
