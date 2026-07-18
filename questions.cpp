@@ -1,31 +1,22 @@
-///sort array by parity:
+///pivot index (middle index):
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
 int main(){
-    vector<int> nums = {0,1,2,0,4,5};
-        int size = nums.size();
-        int st = 0, end = 1;
-        while(end < size ){
-            if(nums[st] % 2 == 0 && nums[end] % 2 != 0){
-                st++;
-                end++;
-           
-            }else if(nums[st] % 2 == 0 && nums[end] % 2== 0){
-                end++;
-                st++;
-            }else if(nums[st] % 2 != 0 && nums[end] % 2 == 0){
-                swap(nums[st],nums[end]);
-                st++;
-                end = st+1;
-            }else if(nums[st] % 2 != 0 && nums[end] % 2 != 0){
-                end++;
-            }
-
-        }
-        for(int i : nums){
+    vector<int> nums = {1,3,2,4};
+    int size = nums.size();
+    int ts = 0;
+    for(int i = 0;i< size ;i++){
+        ts += nums[i];
+    }
+    int rs = 0, ls = 0;
+    for(int i = 0 ;i< size ;i++){
+        rs = ts - ls - nums[i];
+        if(ls == rs ){
             cout << i;
         }
+        ls += nums[i];
+    }
 }
